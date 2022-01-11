@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import ec.edu.modelo.Propietario;
 import ec.edu.modelo.Vehiculo;
+import ec.edu.modelo.VehiculoLiviano;
+import ec.edu.modelo.VehiculoPesado;
 import ec.edu.service.IMatriculaService;
 
 @SpringBootApplication
@@ -44,6 +46,17 @@ public class PruebaCorexionDtApplication implements CommandLineRunner{
 		carro.setValorMatricula(0);
 		carro.setDatos(propie1);
 		//carro.VehiculoPropietario("Dennis", "Tapia", "1721334686");
+		
+		
+		
+		if (carro.getTipo() == 1 ) {
+			VehiculoLiviano liviano=new VehiculoLiviano();
+			liviano.setPesoToneladas("10 toneladas");
+		}else if(carro.getTipo() == 2) {
+			VehiculoPesado pesado=new VehiculoPesado();
+			pesado.setCilindrajeTubo("1202");
+		}
+		
 		LOG.info(carro.toString());
 		
 		//this.auto1.calcularMatricula(10000, 1);

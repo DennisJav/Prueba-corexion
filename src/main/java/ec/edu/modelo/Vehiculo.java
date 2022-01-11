@@ -13,8 +13,11 @@ public class Vehiculo {
 	protected double Precio;
 	protected double valorMatricula;
 	protected Propietario datos;
+	protected VehiculoLiviano datosLiviano;
+	protected VehiculoPesado datosPesado;
 	
 	
+
 	public static final Logger LOG = LoggerFactory.getLogger( Vehiculo.class);
 	
 	
@@ -34,17 +37,18 @@ public class Vehiculo {
 //	}
 	
 	
-	@Override
-	public String toString() {
-		return "Vehiculo [Marca=" + Marca + ", paisOrigen=" + paisOrigen + ", Placa=" + Placa + ", Tipo=" + Tipo
-				+ ", Precio=" + Precio + ", valorMatricula=" + valorMatricula + ", datos=" + datos + "]";
-	}
 
 
 
 	//Metodos setter y getter
 	public String getMarca() {
 		return Marca;
+	}
+	@Override
+	public String toString() {
+		return "Vehiculo [Marca=" + Marca + ", paisOrigen=" + paisOrigen + ", Placa=" + Placa + ", Tipo=" + Tipo
+				+ ", Precio=" + Precio + ", valorMatricula=" + valorMatricula + ", datos=" + datos + ", datosLiviano="
+				+ datosLiviano + ", datosPesado=" + datosPesado + "]";
 	}
 	public void setMarca(String marca) {
 		Marca = marca;
@@ -87,7 +91,27 @@ public class Vehiculo {
 		this.datos = datos;
 	}
 	
+	public VehiculoLiviano getDatosLiviano() {
+		return datosLiviano;
+	}
 
+
+
+	public void setDatosLiviano(VehiculoLiviano datosLiviano) {
+		this.datosLiviano = datosLiviano;
+	}
+
+
+
+	public VehiculoPesado getDatosPesado() {
+		return datosPesado;
+	}
+
+
+
+	public void setDatosPesado(VehiculoPesado datosPesado) {
+		this.datosPesado = datosPesado;
+	}
 
 	
 }
